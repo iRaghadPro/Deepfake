@@ -11,8 +11,6 @@ defineElement(lottie.loadAnimation);
 function Main() {
   return (
     <div>
-      
-      
 
 
       <section id='content' class="overflow-hidden pt-2 pt-md-4 pt-lg-5">
