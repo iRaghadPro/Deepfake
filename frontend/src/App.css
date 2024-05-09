@@ -1,0 +1,52 @@
+*{
+    font-family: 'Tajawal', sans-serif;
+}
+
+.myBackground{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(8,75,130);
+    background: linear-gradient(7deg, rgba(8,75,130,1) 35%, rgba(37,174,122,1) 100%); 
+}
+
+
+
+.whiteBox{
+    background-color: white;
+    padding: 20px; 
+    min-width: 300px;
+    height: 80%;
+    width: 25%;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    align-content:center;
+  }
+  
+  .itemBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+
+  }
+  
+  .title{
+    font-size: 30px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .myForm, 
+  .myButton{
+    width: 100%;
+
+  }
+  
+  .myButton{
+    background: #25ae7a !important;
+    height: 40px;
+  }

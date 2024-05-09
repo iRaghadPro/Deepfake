@@ -1,6 +1,6 @@
 import React from "react"
 import '../App.css'
-import { Box } from "@mui/material"
+import { Box } from '@mui/material'
 import MyTextField from './forms/MyTextField'
 import MyPassField from './forms/MyPassField'
 import MyButton from './forms/MyButton'
@@ -9,28 +9,23 @@ import {useForm} from 'react-hook-form'
 import AxiosInstance from './forms/AxiosInstance'
 import { useNavigate } from 'react-router-dom'
 
+const Register = () =>{
 
-
-const Login = () =>{
   const navigate = useNavigate()
   const {handleSubmit, control} = useForm()
 
   const submission = (data) => {
-    AxiosInstance.post(`login/`,{
+    AxiosInstance.post(`register/`,{
       email: data.email,
       password: data.password,
     })
 
-    .then((response) => {
-      console.log(response)
-      localStorage.setItem('Token', response.data.token)
-      navigate(`/home`)
-    })
-
-    .catch((error) => {
-      console.error('Error during login', error)
+    .then(() => {
+      navigate(`/`)
     })
   }
+
+
 
   return(
 
@@ -41,7 +36,7 @@ const Login = () =>{
         <Box className={"whiteBox"}>
 
           <Box className={"itemBox"}>
-            <Box className={"title"}> أهــــــــلاً بك.</Box>
+            <Box className={"title"}> إنشاء حســـاب.</Box>
 
           </Box>
 
@@ -62,16 +57,24 @@ const Login = () =>{
           </Box>
 
           <Box className={"itemBox"}>
+            <MyPassField 
+              label = {" تأكيد كلمة المرور "}
+              name = {"password2"}
+              control = {control}
+            />
+          </Box>
+
+          <Box className={"itemBox"}>
             <MyButton
               type ={"submit"}
-              label = {"تسجيل الدخول"}
+              label = {" إنشاء حساب "}
             />
             
           </Box>
 
           <Box className={"itemBox"}>
-          ليس لديك حساب؟
-            <Link to="/register"> انشاء حساب </Link>
+            لديك حساب؟
+            <Link to="/"> تسجيل الدخول </Link>
             
           </Box>
 
@@ -83,4 +86,4 @@ const Login = () =>{
   )
 }
 
-export default Login
+export default Register
